@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>BizTemplates demo</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<div id="container">
+  <h2>Customer</h2>
+  <div style="margin-bottom: 10px"><a href="#" th:href="@{'/index'} ">Home</a></div>
+  <form class="input-form" action="#" th:action="@{/customer/save}" th:object="${customer}"
+        method="post">
+    <table>
+      <tr>
+        <td>INN</td>
+        <td><input type="text" th:field="*{inn}"/></td>
+      </tr>
+      <tr>
+        <td>First name</td>
+        <td><input type="text" th:field="*{firstName}"/></td>
+      </tr>
+      <tr>
+        <td>Last name</td>
+        <td><input type="text" th:field="*{lastName}"/></td>
+      </tr>
+      <tr>
+        <td>Middle name</td>
+        <td><input type="text" th:field="*{middleName}"/></td>
+      </tr>
+      <tr>
+        <td style="text-align:right" colspan="2">
+          <input type="submit" value="Save"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

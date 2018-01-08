@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>BizTemplates demo</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<div id="container">
+  <h2>Customers</h2>
+  <div style="margin-bottom: 10px"><a href="#" th:href="@{'/index'} ">Home</a></div>
+  <table border="1px">
+    <tr>
+      <th>INN</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Middle name</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr th:each="customer : ${customers}">
+      <td th:utext="${customer.inn}"></td>
+      <td th:utext="${customer.firstName}"></td>
+      <td th:utext="${customer.lastName}"></td>
+      <td th:utext="${customer.middleName}"></td>
+      <td><a href="#" th:href="@{'/customer/edit/' + ${customer.inn}} ">Edit</a></td>
+      <td><a href="#" th:href="@{'/customer/delete/' + ${customer.inn}} ">Delete</a></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
