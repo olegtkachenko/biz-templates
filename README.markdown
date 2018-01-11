@@ -20,5 +20,9 @@ Building
  
      mvn compile
 
+ Documents:
+
+     https://github.com/edevapps/biz-templates/tree/master/docs
+
 
  
